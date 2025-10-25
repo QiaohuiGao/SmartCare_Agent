@@ -23,8 +23,8 @@ Core goals:
 ⸻
 
 🧩 System Architecture
-<p align="center">
-  <img src="architecture_diagram.jpg" width="800" alt="SmartCare-Agent Architecture Diagram">
+<p align="left">
+  <img src="architecture_diagram.jpg" width="500" alt="SmartCare-Agent Architecture Diagram">
 </p>
 
 ### 🔗 Component ↔ Code Mapping
