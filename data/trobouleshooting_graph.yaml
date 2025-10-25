@@ -1,0 +1,90 @@
+- product: CT-WS
+  fault_code: E23
+  start: COOL-STEP-01
+  nodes:
+    COOL-STEP-01:
+      instruction: "Measure cooling pump voltage."
+      expected: {type: numeric, key: pump_voltage, range: [22, 26]}
+      next_if_pass: COOL-STEP-02
+      next_if_fail: COOL-PWR-TRACE-01
+      risk: low
+    COOL-STEP-02:
+      instruction: "Check LED indicator color."
+      expected: {type: enum, key: pump_led, in: [green, blinking-green]}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: COOL-PWR-TRACE-01
+      risk: low
+    COOL-PWR-TRACE-01:
+      instruction: "Inspect power cable continuity (no live work)."
+      expected: {type: regex, key: continuity, pattern: "OK$"}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: EXIT_ESCALATE
+      risk: medium
+
+- product: MR-3T
+  fault_code: M12
+  start: CRYO-STEP-01
+  nodes:
+    CRYO-STEP-01:
+      instruction: "Check cryo pump temperature."
+      expected: {type: numeric, key: cryo_temp, range: [0, 5]}
+      next_if_pass: CRYO-STEP-02
+      next_if_fail: EXIT_ESCALATE
+      risk: medium
+    CRYO-STEP-02:
+      instruction: "Measure compressor current."
+      expected: {type: numeric, key: comp_current, range: [3, 5]}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: EXIT_ESCALATE
+      risk: medium
+
+- product: PET-CT
+  fault_code: P17
+  start: CAL-STEP-01
+  nodes:
+    CAL-STEP-01:
+      instruction: "Measure PMT high voltage."
+      expected: {type: numeric, key: pmt_hv, range: [850, 900]}
+      next_if_pass: CAL-STEP-02
+      next_if_fail: EXIT_ESCALATE
+      risk: medium
+    CAL-STEP-02:
+      instruction: "Check dark current value."
+      expected: {type: numeric, key: dark_current, range: [0, 2]}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: EXIT_ESCALATE
+      risk: low
+
+- product: US-PRO
+  fault_code: U05
+  start: PROBE-STEP-01
+  nodes:
+    PROBE-STEP-01:
+      instruction: "Verify probe connector voltage."
+      expected: {type: numeric, key: probe_voltage, range: [4.8, 5.2]}
+      next_if_pass: PROBE-STEP-02
+      next_if_fail: EXIT_ESCALATE
+      risk: low
+    PROBE-STEP-02:
+      instruction: "Run probe detection test."
+      expected: {type: regex, key: probe_status, pattern: "PASS$"}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: EXIT_ESCALATE
+      risk: low
+
+- product: DR-100
+  fault_code: D33
+  start: DET-STEP-01
+  nodes:
+    DET-STEP-01:
+      instruction: "Check network link indicator."
+      expected: {type: enum, key: net_light, in: [green]}
+      next_if_pass: DET-STEP-02
+      next_if_fail: EXIT_ESCALATE
+      risk: low
+    DET-STEP-02:
+      instruction: "Restart DICOM service; verify status 'RUNNING'."
+      expected: {type: regex, key: dicom_status, pattern: "RUNNING$"}
+      next_if_pass: EXIT_SUCCESS
+      next_if_fail: EXIT_ESCALATE
+      risk: low

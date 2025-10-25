@@ -1,0 +1,72 @@
+[
+  {
+    "id": "kb_ct_cooling_1",
+    "product": "CT-WS",
+    "module": "Cooling System",
+    "fault_code": "E23",
+    "text": "E23 Cooling fault: Verify pump voltage (22–26V) and LED status. If LED red, check power board connector X3."
+  },
+  {
+    "id": "kb_ct_cooling_2",
+    "product": "CT-WS",
+    "module": "Cooling System",
+    "fault_code": "E23",
+    "text": "If pump voltage below 22V, trace 24V line continuity from PWR-BD CN5 to pump inlet."
+  },
+  {
+    "id": "kb_ct_gantry_1",
+    "product": "CT-WS",
+    "module": "Gantry Control",
+    "fault_code": "E45",
+    "text": "Gantry not rotating. Check rotation interlock signal and verify encoder feedback pulses (>3V)."
+  },
+  {
+    "id": "kb_mr_magnet_1",
+    "product": "MR-3T",
+    "module": "Magnet Cooling",
+    "fault_code": "M12",
+    "text": "Low helium pressure warning. Verify cryogenic pump temperature (expected < 5K) and compressor current draw (3–5A)."
+  },
+  {
+    "id": "kb_mr_gradient_1",
+    "product": "MR-3T",
+    "module": "Gradient Coil",
+    "fault_code": "M34",
+    "text": "Gradient overheat protection active. Confirm water flow rate > 5 L/min and inlet temperature < 25°C."
+  },
+  {
+    "id": "kb_pet_calib_1",
+    "product": "PET-CT",
+    "module": "Detector Calibration",
+    "fault_code": "P17",
+    "text": "Detector calibration failed. Check PMT high voltage (HV) 850–900V and dark current < 2µA."
+  },
+  {
+    "id": "kb_us_probe_1",
+    "product": "US-PRO",
+    "module": "Probe Connection",
+    "fault_code": "U05",
+    "text": "Probe not detected. Reseat probe connector and verify port voltage 4.8–5.2V."
+  },
+  {
+    "id": "kb_us_probe_2",
+    "product": "US-PRO",
+    "module": "Probe Connection",
+    "fault_code": "U06",
+    "text": "Image noisy or distorted. Run probe self-test; expected SNR > 30dB."
+  },
+  {
+    "id": "kb_dr_xray_1",
+    "product": "DR-100",
+    "module": "X-ray Generator",
+    "fault_code": "D21",
+    "text": "Exposure aborted. Check kVp setting (expected 70–120kVp) and verify filament current continuity."
+  },
+  {
+    "id": "kb_dr_detector_1",
+    "product": "DR-100",
+    "module": "Detector",
+    "fault_code": "D33",
+    "text": "Detector communication error. Verify network link light and reinitialize DICOM service."
+  }
+]

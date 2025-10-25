@@ -1,0 +1,13 @@
+alias,canonical
+CT_WS,CT-WS
+MR3T,MR-3T
+PETCT,PET-CT
+Ultrasound,US-PRO
+DigitalRadiography,DR-100
+CoolPump,Cooling System
+PowerBoard,Power Supply Board
+LEDLight,LED Indicator
+CryoPump,Cryogenic Pump
+PMT,Photomultiplier Tube
+DICOMServer,DICOM Service
+NetworkLamp,Network Link
