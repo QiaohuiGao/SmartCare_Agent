@@ -23,20 +23,15 @@ Core goals:
 ⸻
 
 🧩 System Architecture
-User Input (Text / Image / Voice)
-    │
-    ▼
-Input Fusion Layer  ──►  Task Router
-    │                        │
-    │                        ├─► Product & Fault Classification
-    │                        └─► Risk & Safety Assessment
-    ▼
-Hybrid Retrieval (Vector + Keyword + Metadata)
-    │
-    ▼
-Troubleshooting Graph Engine (State Machine)
-    │
-    ├─► ReAct Reasoning Loop (bounded tool use)
-    ├─► Observation Verifier (expected vs. actual)
-    ├─► Confidence & Guardrails
-    └─► Escalation / Summary
+### 🔗 Component ↔ Code Mapping
+
+| System Layer | Module(s) | Description |
+|---------------|------------|--------------|
+| **Input Fusion Layer** | `multimodal_parser.py` | Handles text, OCR, and ASR input. |
+| **Task Router** | `router.py` | Classifies product, fault, and risk. |
+| **Hybrid Retrieval** | `retriever.py` | Combines FAISS, BM25, and metadata filters. |
+| **Troubleshooting Graph** | `graph_engine.py` | YAML-driven state machine for procedural flows. |
+| **ReAct Loop** | `react_tools.py`, `agent_controller.py` | Structured reasoning via tool calls. |
+| **Observation Verifier** | `graph_engine.py` | Checks actual vs. expected values. |
+| **Confidence & Guardrails** | `guardrails.py` | Enforces safety thresholds and escalation. |
+| **Escalation / Summary** | `agent_controller.py` | Final response, summary, or human handoff. |
