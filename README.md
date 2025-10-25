@@ -23,19 +23,22 @@ Core goals:
 ⸻
 
 🧩 System Architecture
+
 <p align="left">
   <img src="architecture_diagram.jpg" width="500" alt="SmartCare-Agent Architecture Diagram">
 </p>
 
-### 🔗 Component ↔ Code Mapping
+⸻
+
+🔗 Component ↔ Code Mapping
 
 | System Layer | Module(s) | Description |
 |---------------|------------|--------------|
-| **Input Fusion Layer** | `multimodal_parser.py` | Handles text, OCR, and ASR input. |
-| **Task Router** | `router.py` | Classifies product, fault, and risk. |
-| **Hybrid Retrieval** | `retriever.py` | Combines FAISS, BM25, and metadata filters. |
-| **Troubleshooting Graph** | `graph_engine.py` | YAML-driven state machine for procedural flows. |
-| **ReAct Loop** | `react_tools.py`, `agent_controller.py` | Structured reasoning via tool calls. |
-| **Observation Verifier** | `graph_engine.py` | Checks actual vs. expected values. |
-| **Confidence & Guardrails** | `guardrails.py` | Enforces safety thresholds and escalation. |
-| **Escalation / Summary** | `agent_controller.py` | Final response, summary, or human handoff. |
+| Input Fusion Layer | `multimodal_parser.py` | Handles text, OCR, and ASR input. |
+| Task Router | `router.py` | Classifies product, fault, and risk. |
+| Hybrid Retrieval | `retriever.py` | Combines FAISS, BM25, and metadata filters. |
+| Troubleshooting Graph | `graph_engine.py` | YAML-driven state machine for procedural flows. |
+| ReAct Loop | `react_tools.py`, `agent_controller.py` | Structured reasoning via tool calls. |
+| Observation Verifier | `graph_engine.py` | Checks actual vs. expected values. |
+| Confidence & Guardrails | `guardrails.py` | Enforces safety thresholds and escalation. |
+| Escalation / Summary | `agent_controller.py` | Final response, summary, or human handoff. |**
