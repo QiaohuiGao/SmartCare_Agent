@@ -23,6 +23,28 @@ Core goals:
 ⸻
 
 🧩 System Architecture
+## 🧩 System Architecture
+
+<p align="center">
+  <img src="docs/architecture_diagram.png" width="800" alt="SmartCare-Agent Architecture Diagram">
+</p>
+User Input (Text / Image / Voice)
+    │
+    ▼
+Input Fusion Layer  ──►  Task Router
+    │                        │
+    │                        ├─► Product & Fault Classification
+    │                        └─► Risk & Safety Assessment
+    ▼
+Hybrid Retrieval (Vector + Keyword + Metadata)
+    │
+    ▼
+Troubleshooting Graph Engine (State Machine)
+    │
+    ├─► ReAct Reasoning Loop (bounded tool use)
+    ├─► Observation Verifier (expected vs. actual)
+    ├─► Confidence & Guardrails
+    └─► Escalation / Summary
 ### 🔗 Component ↔ Code Mapping
 
 | System Layer | Module(s) | Description |
