@@ -13,6 +13,7 @@ SmartCare-Agent is an AI-driven support and training system designed for medical
 It automatically interprets user issues (text, image, or audio), retrieves structured repair procedures from manuals, and walks engineers through each verified step — reducing service load and ensuring safety compliance.
 
 Core goals:
+
 	•	✅ Understand multimodal user queries (text, image, audio)
 	
 	•	🔍 Retrieve verified troubleshooting steps using RAG
