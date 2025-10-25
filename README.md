@@ -14,10 +14,15 @@ It automatically interprets user issues (text, image, or audio), retrieves struc
 
 Core goals:
 	•	✅ Understand multimodal user queries (text, image, audio)
+	
 	•	🔍 Retrieve verified troubleshooting steps using RAG
+	
 	•	🧠 Reason through steps using ReAct (Reason → Act → Reflect)
+	
 	•	⚙️ Enforce deterministic workflows via Troubleshooting Graphs
+	
 	•	🛡️ Provide confidence-based fallback & escalation
+	
 	•	📊 Continuously learn from logs and resolved sessions
 
 ⸻
